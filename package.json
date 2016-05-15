@@ -1,0 +1,27 @@
+{
+  "name": "adaptjs",
+  "description": "a javascript wrapper around MycroftAI/adapt",
+  "version": "1.0.0",
+  "license": "LGPL-3.0",
+  "main": "./index.js",
+  "author": {
+  	"name": "hinzundcode",
+  	"email": "schokoc+git@appucino.de"
+  },
+  "repository": {
+  	"type": "git",
+  	"url": "git://github.com/hinzundcode/adaptjs.git"
+  },
+  "keywords": [
+  	"natural",
+  	"language",
+  	"parsing",
+  	"intent"
+  ],
+  "dependencies": {
+    "json-stream": "^1.0.0"
+  },
+  "engines": {
+  	"node": ">=5.11"
+  }
+}
