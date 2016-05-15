@@ -18,8 +18,8 @@ EngineBuilder.regexEntity(pattern): RegexEntity
 EngineBuilder.intent(name): Intent
 EngineBuilder.build(): Engine
 
-Intent.require(entity): this
-Intent.optionally(entity): this
+Intent.require(entity, [attributeName]): this
+Intent.optionally(entity, [attributeName]): this
 
 Engine.start()
 Engine.stop()
