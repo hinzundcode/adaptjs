@@ -10,23 +10,6 @@ $ npm install --save adaptjs
 
 Install [MycroftAI/adapt](https://github.com/MycroftAI/adapt) as described in their [README](https://github.com/MycroftAI/adapt).
 
-## API
-
-```
-EngineBuilder.entity(name, arrayOfValues): Entity
-EngineBuilder.regexEntity(pattern): RegexEntity
-EngineBuilder.intent(name): Intent
-EngineBuilder.build(): Engine
-
-Intent.require(entity, [attributeName]): this
-Intent.optionally(entity, [attributeName]): this
-
-Engine.start()
-Engine.stop()
-Engine.isRunning(): bool
-Engine.query(input): Promise
-```
-
 ## Example
 
 ```javascript
@@ -59,6 +42,23 @@ engine.query("Whats the weather in San Francisco today?")
 
 See [examples/](https://github.com/hinzundcode/adaptjs/tree/master/examples) for more examples of the API and [MycroftAI/adapt](https://github.com/MycroftAI/adapt) for more information about the Adapt Intent Parser itself.
 
+## API
+
+```
+EngineBuilder.entity(name, arrayOfValues): Entity
+EngineBuilder.regexEntity(pattern): RegexEntity
+EngineBuilder.intent(name): Intent
+EngineBuilder.build(): Engine
+
+Intent.require(entity, [attributeName]): this
+Intent.optionally(entity, [attributeName]): this
+
+Engine.start()
+Engine.stop()
+Engine.isRunning(): bool
+Engine.query(input): Promise
+```
+
 ## How it works
 
-The EngineBuilder on the JavaScript side creates a definition of all entities and intents and passes it to a python child process as JSON. The python child process keeps running in the background and receives new input over stdin. You have to stop the child process manually using `engine.stop()`. 
+The EngineBuilder on the JavaScript side creates a definition of all entities and intents and passes it to a python child process as JSON. The python child process keeps running in the background and receives new input over stdin. You have to stop the child process manually using `engine.stop()`.
