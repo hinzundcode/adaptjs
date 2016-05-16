@@ -59,6 +59,6 @@ engine.query("Whats the weather in San Francisco today?")
 
 See [examples/](https://github.com/hinzundcode/adaptjs/tree/master/examples) for more examples of the API and [MycroftAI/adapt](https://github.com/MycroftAI/adapt) for more information about the Adapt Intent Parser itself.
 
-## How does it work
+## How it works
 
 The EngineBuilder on the JavaScript side creates a definition of all entities and intents and passes it to a python child process as JSON. The python child process keeps running in the background and receives new input over stdin. You have to stop the child process manually using `engine.stop()`. 
