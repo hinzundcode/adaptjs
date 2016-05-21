@@ -1,4 +1,5 @@
 "use strict";
+const debug = require("debug")("adaptjs");
 const spawn = require("child_process").spawn;
 const JSONStream = require("json-stream");
 
@@ -22,19 +23,27 @@ class Engine {
 	start() {
 		if (this.worker) return;
 		this.worker = spawn("python", [__dirname+"/worker.py", JSON.stringify(this.schema)]);
+		debug("worker spawned");
 		
 		this.worker.on("error", err => {
-			//console.log("worker error", err);
+			debug("worker error");
+			debug(err);
+			
 			this.stop(err);
 		});
 		this.worker.on("exit", (code, signal) => {
-			//console.log("worker exited", code, signal);
+			debug("worker exited");
+			debug(code);
+			debug(signal);
+			
 			this.stop(new Error("worker exited"));
 		});
 		
 		this.worker.stdout.pipe(this.stream);
 		//this.worker.stdout.pipe(process.stdout);
-		//this.worker.stderr.pipe(process.stderr);
+		
+		if (debug.enabled)
+			this.worker.stderr.pipe(process.stderr);
 	}
 	
 	stop(error) {

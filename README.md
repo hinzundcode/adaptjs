@@ -31,7 +31,7 @@ let engine = builder.build();
 
 engine.query("Whats the weather in San Francisco today?")
 .then(intents => { console.log(intents); engine.stop(); })
-.catch(error => { console.log(error); engine.stop(); });
+.catch(error => { console.log(error); console.log(error.stack); engine.stop(); });
 
 /* [ { intent_type: 'WeatherIntent',
     weatherkey: 'weather',

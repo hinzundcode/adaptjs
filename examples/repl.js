@@ -38,6 +38,7 @@ rl.on("line", line => {
 		rl.prompt();
 	}).catch(error => {
 		console.log(error);
+		console.log(error.stack);
 		rl.prompt();
 	});
 });
