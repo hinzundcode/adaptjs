@@ -1,5 +1,11 @@
 import json
 import sys
+
+# If there's a second argument given, use that to insert an import path
+# This enables users to use their own Adapt installation directories.
+if len(sys.argv) > 2:
+    sys.path.insert(0, sys.argv[2])
+
 from adapt.intent import IntentBuilder
 from adapt.engine import IntentDeterminationEngine
 

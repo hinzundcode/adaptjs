@@ -44,7 +44,8 @@ See [examples/](https://github.com/hinzundcode/adaptjs/tree/master/examples) for
 
 ## API
 
-```
+```javascript
+new EngineBuilder([adaptInstallationPath]): EngineBuilder
 EngineBuilder.entity(name, arrayOfValues): Entity
 EngineBuilder.regexEntity(pattern): RegexEntity
 EngineBuilder.intent(name): Intent
@@ -62,3 +63,5 @@ Engine.query(input): Promise
 ## How it works
 
 The EngineBuilder on the JavaScript side creates a definition of all entities and intents and passes it to a python child process as JSON. The python child process keeps running in the background and receives new input over stdin. You have to stop the child process manually using `engine.stop()`.
+
+If you have installed Adapt in a specific location (not your current-working-directory), then you can pass that path as the first argument of the EngineBuilder. This path should be absolute, because otherwise it will be relative out of node_modules/ which _will_ lead to problems later on.
