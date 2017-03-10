@@ -1,7 +1,7 @@
 {
 	"name": "adaptjs",
 	"description": "a javascript wrapper around MycroftAI/adapt",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"license": "LGPL-3.0",
 	"main": "./index.js",
 	"author": {
